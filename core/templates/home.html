@@ -1,68 +1,433 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Jawad ur Rahman | Portfolio</title>
+    <meta name="description" content="Muhammad Jawad ur Rahman - AI Engineer and Backend Developer specializing in LLM integration, RAG pipelines, LangGraph, and FastAPI.">
+    <title>Muhammad Jawad ur Rahman | AI Engineer &amp; Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">M. Jawad ur Rahman<span class="dot">.</span></div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+<div class="bg-animation">
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+</div>
+
+<nav id="navbar">
+    <div class="nav-container">
+        <div class="logo">Jawad<span class="dot">.</span></div>
+        <div class="nav-links" id="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <a href="#contact" class="hire-btn">Hire Me</a>
-    </nav>
+        <a href="#contact" class="hire-btn" id="hire-btn">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-    <!-- Home / Intro Section -->
-    <section id="home">
-        <h1>M. Jawad ur Rahman</h1>
-        <p class="tagline">AI Engineer & Backend Developer</p>
-        <p class="subtext">Building intelligent systems with LLMs, RAG pipelines, and clean backend APIs.</p>
-        <a href="#projects" class="cta-btn">View My Work</a>
-    </section>
+<!-- HERO -->
+<section id="home">
+    <div class="hero-content">
+        <div class="hero-badge"><span class="badge-dot"></span>Available for work</div>
+        <h1 class="hero-name">Muhammad <span class="highlight">Jawad</span><br>ur Rahman</h1>
+        <p class="hero-title"><span id="typed"></span><span class="cursor-blink">|</span></p>
+        <p class="hero-desc">Building intelligent production systems with LLMs, RAG pipelines,<br>and clean backend APIs. I turn AI research into real-world products.</p>
+        <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Projects Shipped</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">2</span><span class="stat-label">Companies Worked</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">AI</span><span class="stat-label">First Mindset</span></div>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="code-card">
+            <div class="code-header">
+                <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+                <span class="code-filename">rag_pipeline.py</span>
+            </div>
+            <pre class="code-body"><span class="kw">from</span> langchain <span class="kw">import</span> LangGraph
+<span class="kw">from</span> chromadb <span class="kw">import</span> Client
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write a short intro about yourself here.</p>
-    </section>
+<span class="fn">def</span> <span class="fname">build_rag</span>(docs):
+    <span class="cm"># top-k=3 retrieval</span>
+    db = Client.<span class="fn">from_documents</span>(docs)
+    retriever = db.<span class="fn">as_retriever</span>(k=<span class="num">3</span>)
+    graph = LangGraph.<span class="fn">create</span>()
+    graph.<span class="fn">add_node</span>(<span class="str">"retrieve"</span>, retriever)
+    graph.<span class="fn">add_node</span>(<span class="str">"generate"</span>, llm)
+    <span class="kw">return</span> graph.<span class="fn">compile</span>()</pre>
+        </div>
+    </div>
+    <a href="#about" class="scroll-indicator"><span>Scroll</span><div class="scroll-line"></div></a>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>List your skills here.</p>
-    </section>
+<!-- ABOUT -->
+<section id="about">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">About Me</span>
+            <h2>Passionate about <span class="highlight">AI that works</span></h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I am an AI Engineer and Backend Developer with hands-on experience building <strong>production AI systems</strong> including LLM integration, RAG pipelines, LangGraph-based automation, and backend APIs using Python and FastAPI.</p>
+                <p>Currently working as an AI Engineer at <strong>Saturn7 Solutions</strong>, I build real-world AI automation systems that automate workflows, generate insights, and solve real problems for real users.</p>
+            </div>
+            <div class="about-education">
+                <div class="edu-card">
+                    <div class="edu-icon">&#127891;</div>
+                    <div class="edu-details">
+                        <h3>Bachelor in Artificial Intelligence</h3>
+                        <p class="edu-school">Pak Austria Fachhochschule (PAF-IAST)</p>
+                        <p class="edu-location">Haripur, KPK</p>
+                        <span class="edu-badge">3rd Year &bull; Ongoing</span>
+                    </div>
+                </div>
+                <div class="languages-card">
+                    <h3>Languages</h3>
+                    <div class="lang-list">
+                        <div class="lang-item"><span>Chitrali</span><span class="lang-level native">Native</span></div>
+                        <div class="lang-item"><span>Urdu</span><span class="lang-level native">Native / C2</span></div>
+                        <div class="lang-item"><span>English</span><span class="lang-level proficient">B2&#8211;C2</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Your projects will go here.</p>
-    </section>
+<!-- SKILLS -->
+<section id="skills">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Skills</span>
+            <h2>My <span class="highlight">Tech Stack</span></h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-card-icon">&#9889;</div>
+                <h3>Languages &amp; Frameworks</h3>
+                <div class="skill-tags">
+                    <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Django</span>
+                    <span class="tag">SQLAlchemy</span><span class="tag">REST APIs</span><span class="tag">SQL Databases</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon">&#129504;</div>
+                <h3>AI / ML</h3>
+                <div class="skill-tags">
+                    <span class="tag">Machine Learning</span><span class="tag">NLP</span><span class="tag">LangChain</span>
+                    <span class="tag">LangGraph</span><span class="tag">RAG Systems</span><span class="tag">Prompt Engineering</span>
+                    <span class="tag">Hugging Face</span><span class="tag">Claude / Anthropic API</span>
+                    <span class="tag">LLM Integration</span><span class="tag">MCP</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-icon">&#128295;</div>
+                <h3>Tools &amp; DevOps</h3>
+                <div class="skill-tags">
+                    <span class="tag">Docker</span><span class="tag">Git &amp; GitHub</span>
+                    <span class="tag">Vector Databases</span><span class="tag">ChromaDB</span>
+                    <span class="tag">SQLite</span><span class="tag">Railway</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Your work experience will go here.</p>
-    </section>
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Experience</span>
+            <h2>Professional <span class="highlight">Journey</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-role">AI Engineer (Contract, Flexible)</h3>
+                            <p class="exp-company">Saturn7 Solutions</p>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-location">&#128205; Taxila, Pakistan (Onsite)</span>
+                            <span class="exp-date">July 2026 &ndash; Present</span>
+                            <span class="exp-badge current">Current</span>
+                        </div>
+                    </div>
+                    <ul class="exp-points">
+                        <li>Designed and deployed a production <strong>RAG system</strong> using LangChain and ChromaDB (top-k=3 retrieval) for a small business website, handling customer queries, complaints, and policy/terms questions automatically.</li>
+                        <li>Built a booking system integrated into the same client website.</li>
+                        <li>Designed and deployed a <strong>Facebook automation bot</strong> using Selenium, capable of auto-posting content and managing account activity, hosted on a VPS.</li>
+                    </ul>
+                    <div class="exp-repos">
+                        <a href="https://github.com/jwd-jr/lollypop-lane-chatbot" target="_blank" rel="noopener" class="repo-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            lollypop-lane-chatbot
+                        </a>
+                        <a href="https://github.com/jwd-jr/lollypop-lane-booking" target="_blank" rel="noopener" class="repo-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            lollypop-lane-booking
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-role">AI Engineer (Internship)</h3>
+                            <p class="exp-company">ctrlaltcrew</p>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-location">&#128205; Pakistan (Hybrid)</span>
+                            <span class="exp-date">Oct 2025 &ndash; Jan 2026 &bull; 4 mos</span>
+                        </div>
+                    </div>
+                    <ul class="exp-points">
+                        <li>Worked on <strong>Artificial Intelligence (AI)</strong> solutions and developed production-ready systems using <strong>Python</strong>.</li>
+                        <li>Collaborated with a cross-functional team in a hybrid environment to deliver high-quality software.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-role">Backend Developer Intern</h3>
+                            <p class="exp-company">Hoop Interactive</p>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-location">&#128205; Wyoming, USA (Remote)</span>
+                            <span class="exp-date">Mar 2026 &ndash; June 2026</span>
+                        </div>
+                    </div>
+                    <ul class="exp-points">
+                        <li>Built <strong>REST API</strong> using FastAPI for a full-stack Tax Filing System, handling tax record submission, data storage, and transaction tracking.</li>
+                        <li>Designed a normalized relational database schema based on ERD and class diagram planning.</li>
+                        <li>Containerized the backend using <strong>Docker</strong> and set up scheduled cron jobs to automate recurring tasks.</li>
+                        <li>Collaborated cross-functionally on testing, debugging, and feature development.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Your contact info will go here.</p>
-    </section>
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Projects</span>
+            <h2>Things I&apos;ve <span class="highlight">Built</span></h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card featured">
+                <div class="project-card-header">
+                    <div class="project-icon">&#128269;</div>
+                    <a href="https://github.com/jwd-jr/langgraph-job-assistant" target="_blank" rel="noopener" class="project-github-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                </div>
+                <h3>Job Search &amp; Application Assistant</h3>
+                <p>An agentic job search system using LangGraph that takes a resume and location, searches for matching roles, and automatically broadens the search query if fewer than 5 relevant results are found.</p>
+                <ul class="project-highlights">
+                    <li>Modular subgraphs for resume understanding, job search, and scoring/tracking</li>
+                    <li>Persistent tracking via SQLite with apply/log outcomes</li>
+                    <li>Feedback loop that analyzes rejection patterns and suggests improvements</li>
+                </ul>
+                <div class="project-tags">
+                    <span class="ptag">LangGraph</span><span class="ptag">SQLite</span><span class="ptag">Tavily API</span><span class="ptag">Python</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-icon">&#128722;</div>
+                    <a href="https://github.com/jwd-jr/Startup" target="_blank" rel="noopener" class="project-github-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                </div>
+                <h3>Shilajit Store &mdash; E-Commerce Website</h3>
+                <p>Full e-commerce website built from scratch using Django, including product catalog, batch/lab-test verification, and Cash on Delivery ordering.</p>
+                <ul class="project-highlights">
+                    <li>Product, Batch, and Order models for customer trust and traceability</li>
+                    <li>Custom Django admin panel for managing products and orders</li>
+                    <li>Lightweight RAG-based Q&amp;A for shipping and policy questions</li>
+                </ul>
+                <div class="project-tags">
+                    <span class="ptag">Django</span><span class="ptag">Python</span><span class="ptag">SQLite/ORM</span><span class="ptag">RAG</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-icon">&#128202;</div>
+                    <div style="width:20px"></div>
+                </div>
+                <h3>YouTube Comment Analyzer &mdash; Chrome Extension</h3>
+                <p>Full-stack ML app: backend live on Railway, frontend as a working Chrome Extension. Analyzes up to 1,000 YouTube comments using 5 trained ML models.</p>
+                <ul class="project-highlights">
+                    <li>Sentiment analysis with 5 ML models; best model served via FastAPI</li>
+                    <li>Opinion clustering with K-Means + TF-IDF with percentage breakdown</li>
+                    <li>Interactive chart displayed inside YouTube</li>
+                </ul>
+                <div class="project-tags">
+                    <span class="ptag">FastAPI</span><span class="ptag">Scikit-learn</span><span class="ptag">K-Means</span><span class="ptag">Chrome Extension</span><span class="ptag">Railway</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-icon">&#129302;</div>
+                    <div style="width:20px"></div>
+                </div>
+                <h3>Facebook Automation Bot</h3>
+                <p>Facebook automation bot that auto-posts to a Page and replies to group comments.</p>
+                <ul class="project-highlights">
+                    <li>Developed using Python and Selenium for web automation</li>
+                    <li>Handles auto-posting content and managing account activity</li>
+                    <li>Hosted securely on a VPS</li>
+                </ul>
+                <div class="project-tags">
+                    <span class="ptag">Python</span><span class="ptag">Selenium</span><span class="ptag">Automation</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-icon">&#128197;</div>
+                    <div style="width:20px"></div>
+                </div>
+                <h3>Lollypop Lane Booking System</h3>
+                <p>Real client project where I replaced a Google Form with a custom, fully functional booking system.</p>
+                <ul class="project-highlights">
+                    <li>Custom booking system integrated directly into the client website</li>
+                    <li>Replaced basic Google Form with a professional user experience</li>
+                </ul>
+                <div class="project-tags">
+                    <span class="ptag">JavaScript</span><span class="ptag">Client Project</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-icon">&#128172;</div>
+                    <div style="width:20px"></div>
+                </div>
+                <h3>Lollypop Lane Chatbot</h3>
+                <p>Real client project providing an automated chatbot for customer interactions.</p>
+                <ul class="project-highlights">
+                    <li>Production RAG system using LangChain and ChromaDB</li>
+                    <li>Handles customer queries, complaints, and policy/terms questions automatically</li>
+                </ul>
+                <div class="project-tags">
+                    <span class="ptag">Python</span><span class="ptag">LangChain</span><span class="ptag">ChromaDB</span><span class="ptag">Client Project</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-header">
+                    <div class="project-icon">&#128200;</div>
+                    <div style="width:20px"></div>
+                </div>
+                <h3>AI-Powered Data Analysis Platform</h3>
+                <p>Complete production-ready AI-powered data analysis platform with RAG, multi-user support, and interactive visualizations.</p>
+                <ul class="project-highlights">
+                    <li>Integrated RAG for context-aware data querying</li>
+                    <li>Multi-user support with secure data isolation</li>
+                    <li>Interactive visualizations for clear insights</li>
+                </ul>
+                <div class="project-tags">
+                    <span class="ptag">Python</span><span class="ptag">RAG</span><span class="ptag">Data Analysis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- CONTACT -->
+<section id="contact">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Contact</span>
+            <h2>Let&apos;s <span class="highlight">Work Together</span></h2>
+            <p class="section-sub">Have a project in mind or want to hire me? Reach out &mdash; I would love to chat.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-links">
+                <a href="mailto:jawdjr@gmail.com" class="contact-card" id="contact-email">
+                    <div class="contact-icon">&#9993;</div>
+                    <div><h4>Email</h4><p>jawdjr@gmail.com</p></div>
+                    <span class="contact-arrow">&rarr;</span>
+                </a>
+                <a href="https://linkedin.com/in/m-jawad-ur-rahman-3243b6306" target="_blank" rel="noopener" class="contact-card" id="contact-linkedin">
+                    <div class="contact-icon">&#128188;</div>
+                    <div><h4>LinkedIn</h4><p>m-jawad-ur-rahman</p></div>
+                    <span class="contact-arrow">&rarr;</span>
+                </a>
+                <a href="https://github.com/jwd-jr" target="_blank" rel="noopener" class="contact-card" id="contact-github">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width:24px;height:24px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </div>
+                    <div><h4>GitHub</h4><p>github.com/jwd-jr</p></div>
+                    <span class="contact-arrow">&rarr;</span>
+                </a>
+                <a href="tel:+923279977775" class="contact-card" id="contact-phone">
+                    <div class="contact-icon">&#128222;</div>
+                    <div><h4>Phone</h4><p>+92 327 9977775</p></div>
+                    <span class="contact-arrow">&rarr;</span>
+                </a>
+            </div>
+            <div class="contact-form-wrap">
+                <form class="contact-form" id="contact-form" action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="cf-name">Your Name</label>
+                        <input type="text" id="cf-name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-email">Your Email</label>
+                        <input type="email" id="cf-email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-message">Message</label>
+                        <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-full" id="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">Jawad<span class="dot">.</span></div>
+        <p class="footer-text">Built with Django &amp; passion. &copy; 2026 Muhammad Jawad ur Rahman.</p>
+        <div class="footer-links">
+            <a href="https://github.com/jwd-jr" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/m-jawad-ur-rahman-3243b6306" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:jawdjr@gmail.com">Email</a>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
 </body>
-
 </html>
